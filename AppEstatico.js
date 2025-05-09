@@ -15,6 +15,10 @@ app.use(express.static('Estatico'));
 //http://localhost:3000/ContenidoEstatico/holamundo.html
 app.use('/ContenidoEstatico', express.static('Estatico'));
 
+//Setea el contenido de la carpeta Estatico como ruta a partir de la raiz
+//http://localhost:3000/miOtraRuta/holamundo.html
+app.use('/miOtraRuta', express.static('Estatico'));
+
 
 
 app.listen(port, () => {
