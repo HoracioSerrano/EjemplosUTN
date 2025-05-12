@@ -13,7 +13,7 @@ function funcion2(req,res,next){
 }
 function funcion3(req,res,next){
     console.log("Dentro de funcion 3");
-    res.status(200).send("Final de cadena");
+    res.status(200).send("Final de cadena");//se ejecuta next aunque se envie respuesta
     next();
 }
 function funcion4(req,res,next){
