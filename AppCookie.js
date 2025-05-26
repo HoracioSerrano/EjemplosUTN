@@ -17,7 +17,7 @@ app.get('/setCookie',(req,res,next)=>{
     res.cookie('nombreMiCookie','valorMiCookie',{
         httpOnly: true,
         secure: false,          // usar solo en HTTPS
-        sameSite: 'Strict',    // o 'Lax' según tu caso
+        sameSite: 'Lax',    // o 'Lax' según tu caso
         maxAge: 2 * 60 * 60 * 1000 // 2 horas parte de milisegundos
     });
     res.status(200).send('cookie seteada');

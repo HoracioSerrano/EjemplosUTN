@@ -2,7 +2,7 @@
 const jwt = require('jsonwebtoken'); //npm install jsonwebtoken
 
 // Clave secreta para firmar (debe ser Uint8Array)
-const secret = 'clave_super_secreta';
+const secret = 'clave_super_secreta_pero_enserio';
 
 // Función para generar el token
 async function generarJWT(payload) {
