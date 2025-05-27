@@ -52,7 +52,7 @@ async function loopColecion(req,res){
 app.get('/', vistaEjemplo1);
 app.post('/', vistaEjemplo2);
 
-app.get('/alta',vistaEjemploAlta)
+app.get('/alta', vistaEjemploAlta)
 app.get('/baja',vistaEjemploBaja)
 app.get('/modificacion',vistaEjemploModificacion)
 app.get('/coleccion', loopColecion)
