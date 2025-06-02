@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ticket</title>
+</head>
+
+<body>
+
+    <h1>Ticket</h1>
+    <p>Ticket ID: <%= ticket.id %>
+    </p>
+    <p>Fecha:<%= ticket.fecha %>
+    </p>
+    <p>Nombre cliente:<%= ticket.nombre %>
+    </p>
+    <p>Producto:<%= ticket.producto %>
+    </p>
+    <p>Total:<%= ticket.total %>
+    </p>
+
+    <% if(!!ticket.view) { %>
+        <a href="http://localhost:3000/ticket/download/<%= ticket.id %>" target="_blank">Descargar ticket</a>
+        <% } %>
+</body>
+
+</html>
