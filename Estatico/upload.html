@@ -6,9 +6,33 @@
 </head>
 <body>
     <h1>Subir archivo</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <form action="/upload" method="POST" enctype="multipart/form-data" id="formulario">
         <input type="file" name="archivo" required />
         <button type="submit">Subir</button>
-    </form>
+    </form><br>
+    <button type="button" id="enviarJS">Enviar Por JS</button>
+
 </body>
+
+
+<script>
+    document.getElementById('enviarJS').addEventListener('click', async function (e) {
+        e.preventDefault(); // Evita el submit tradicional
+
+        const form = formulario;
+        const formData = new FormData(form); // Captura todos los campos automáticamente
+
+        try {
+            const respuesta = await fetch('/upload', {
+                method: 'POST',
+                body: formData, // fetch automáticamente usa multipart/form-data
+            });
+
+            const texto = await respuesta.text();
+            alert('Respuesta del servidor: ' + texto);
+        } catch (err) {
+            console.error('Error al enviar:', err);
+        }
+    });
+</script>
 </html>
