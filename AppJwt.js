@@ -6,7 +6,7 @@ const secret = 'clave_super_secreta_pero_enserio';
 
 // Función para generar el token
 async function generarJWT(payload) {
-    const token = jwt.sign(payload, secret, { expiresIn: '10s', algorithm: 'HS256' });
+    const token = jwt.sign(payload, secret, { expiresIn: '10', algorithm: 'HS256' });
     console.log('Token:', token);
     return token;
 }
