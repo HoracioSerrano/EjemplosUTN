@@ -7,6 +7,7 @@ const express = require('express')
 const app = express()
 
 app.use(express.json());//si viene una solicitud con header content-type aplication/json
+app.use(express.urlencoded({extended:true}));//si viene una solicitud con header content-type aplication/x-www-form-urlencoded
 
 //utiliza CORS
 var cors = require('cors');
@@ -27,6 +28,7 @@ app.get('/api/busqueda',async (req, res) => {
     res.send(`Buscando: ${req.query.nombre}`);
 });
 
+//Ejemplo body JSON
 app.post('/api', async (req,res,next)=>{
     const datos = req.body;
     //grabo los datos
@@ -34,11 +36,11 @@ app.post('/api', async (req,res,next)=>{
     res.status(200).send({id:2158354});
 });
 
+//Ejemplo body formData
 app.put('/api', async (req,res,next)=>{
-    const datos = req.body;
-    //grabo los datos
-    console.log(datos);
-    res.status(200).send({status:"update ejecutado"});
+    const {nombre, apellido} = req.body;
+    console.log(`Nombre: ${nombre} y Apellido: ${apellido}`);
+    res.status(200).send({valores:`Nombre: ${nombre} y Apellido: ${apellido}`});
 });
 
 app.delete('/api', async (req,res,next)=>{

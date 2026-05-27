@@ -10,8 +10,9 @@ const port = 3000
 
 const n = process.env.NOMBRE;
 const a = process.env.APELLIDO;
+const c = process.env.ASPNETCORE_ENVIRONMENT;
 
-console.log(`Nombre:${n} Apellido:${a}`)
+console.log(`Nombre:${n} Apellido:${a} Ambiente:${c}`);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
