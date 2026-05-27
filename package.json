@@ -10,6 +10,7 @@
     "method-override": "^3.0.0",
     "multer": "^2.0.0",
     "mysql2": "^3.14.1",
-    "puppeteer": "^24.9.0"
+    "puppeteer": "^24.9.0",
+    "sequelize": "^6.37.7"
   }
 }
