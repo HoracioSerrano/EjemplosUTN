@@ -76,7 +76,7 @@ async function Programa(){
     const Mesa11 = await Mesa.create(
         {
             mesa_numero: 21, 
-            mesa_mozo: 'Horacio Serrano',
+            mesa_mozo: 'Marcelo Luque',
             Comensals: [
                 {
                     comensal_nombre: 'Juan'
@@ -108,6 +108,15 @@ async function Programa(){
     });
     console.log(mesaBusacada[0].dataValues);
     console.log(mesaBusacada[0].Comensals);
+
+    await Mesa.update(
+        {
+            mesa_mozo : "Ramiro Escobar"
+        },
+        {
+            where: {mesa_numero : 10}
+        }
+    )
 
     sequelize.close();
 }
