@@ -39,10 +39,12 @@ function esperarTecla() {
 
 
 async function prueba1(){
-    const payload = {nomre:'horacio', apellido:'serrano'}
+    const payload = {guid:'fijoai-fadfjaijda-huihaad', logInIcial:'2026-06-10', permisosMenu:['Alta', 'Modificacion']}
     const jwt = await generarJWT(payload);
     await esperarTecla();
     verificarJWT(jwt);
 }
 
 prueba1();
+
+

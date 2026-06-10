@@ -14,11 +14,12 @@ app.use(cors());//estoy seteando cors como middleware para todas las solicitudes
 app.use(cookieParser());
 
 app.get('/setCookie',(req,res,next)=>{
-    res.cookie('nombreMiCookie','valorMiCookie',{
+    res.cookie('nombreMiCookie','adfadfaf.afadfeg.kryuj',{
+        path: '/',
         httpOnly: true,
         secure: false,          // usar solo en HTTPS
         sameSite: 'Lax',    // o 'Lax' según tu caso
-        maxAge: 2 * 60 * 60 * 1000 // 2 horas parte de milisegundos
+        maxAge: 2 * 60 * 60 * 1000 // 2 horas parte de milisegundos 
     });
     res.status(200).send('cookie seteada');
 });
@@ -33,3 +34,8 @@ const port = 3000
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
+
+
+//-->llega solicitud-->ValidoToken-->Extiendo El Token-->Validacion Datos-->Controlador
+
+//-->llega solicitud-->Validacion Datos-->Controlador   (login)
