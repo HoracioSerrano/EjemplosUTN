@@ -20,10 +20,14 @@ const upload = multer({ storage });
 app.use(express.static('Estatico'));
 
 // Ruta para subir un archivo (campo 'archivo' en el form)
-app.post('/upload', upload.single('archivo'), (req, res) => {
-    if (!req.file) return res.status(400).send('No se subió ningún archivo');
-    res.send(`Archivo subido correctamente: ${req.file.filename}`);
-});
+app.post(
+    '/upload', 
+    upload.single('archivo'), 
+    (req, res) => {
+        if (!req.file) return res.status(400).send('No se subió ningún archivo');
+        res.send(`Archivo subido correctamente: ${req.file.filename}`);
+    }
+);
 
 app.listen(3000, () => {
     console.log('Servidor escuchando en http://localhost:3000');
